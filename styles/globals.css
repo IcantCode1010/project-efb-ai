@@ -4,3 +4,6 @@
 
 /* Import EFB theme variables */
 @import './theme.css';
+
+/* Import Aviation Typography System */
+@import './typography.css';

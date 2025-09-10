@@ -20,6 +20,7 @@ module.exports = {
     // Include original EFB components
     '../fbw-common/src/systems/instruments/src/EFB/**/*.{js,ts,jsx,tsx}',
   ],
+  plugins: [],
   theme: {
     extend: {
       width: () => ({
@@ -78,10 +79,28 @@ module.exports = {
       }),
       maxWidth: { '1/2': '50%' },
     },
+    fontSize: {
+      // FAA Human Factors compliant sizes
+      'xs': '12px',
+      'sm': '14px',
+      'base': '16px',     // Body text - FAA standard
+      'lg': '18px',       // H3
+      'xl': '20px',       // H2
+      '2xl': '24px',      // H1
+      '3xl': '28px',
+      '4xl': '32px',
+      // Aviation-specific
+      'mono': '15px',     // Monospace for technical data
+      'warning': '16px',  // Minimum for warnings
+    },
     fontFamily: {
-      mono: ['JetBrains Mono', ...fallbacks],
-      body: ['Inter', ...fallbacks],
-      title: ['Manrope', ...fallbacks],
+      // Aviation-approved sans-serif stack
+      sans: ['Arial', 'Helvetica', 'Liberation Sans', 'Arimo', 'sans-serif'],
+      body: ['Arial', 'Helvetica', 'Liberation Sans', 'Arimo', 'sans-serif'],
+      title: ['Arial', 'Helvetica', 'Liberation Sans', 'Arimo', 'sans-serif'],
+      // Monospace for technical data, tables, codes
+      mono: ['Courier New', 'Courier', 'Consolas', 'monospace'],
+      // Keep specialized fonts as fallback
       rmp: ['AirbusRMP'],
       inter: ['Inter', ...fallbacks],
     },
